@@ -2,10 +2,10 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <div id='links'>
-  <%= link_to 'New user', new_user_path, remote: true, method: :get %>
-  <%= link_to 'All users', users_path, remote: true, method: :get %>
+  <%= link_to 'Replase Ajax field to list of users(html - JQuery function)', users_path, remote: true %>
+  <%= link_to 'Add new user form to Ajax field(appendTo - JQuery function)', new_user_path, remote: true %>
 </div>
+<h1>Ajax field</h1>
 <div id='ajax_field'>
-  <h1>Ajax field</h1>
   <%= render template: 'users/new' %>
 </div>

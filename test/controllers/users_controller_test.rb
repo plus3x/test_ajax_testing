@@ -29,7 +29,7 @@ class UsersControllerTest < ActionController::TestCase
     xhr :get, :new
     
     assert_response :success
-    assert_select_jquery :html, "#ajax_field" do
+    assert_select_jquery :appendTo, "#ajax_field" do
       assert_select "label", count: 3
       assert_select "input", count: 5
     end
