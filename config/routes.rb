@@ -1,4 +1,6 @@
 TestAjaxTesting::Application.routes.draw do
+  
+  root 'home#index'
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
