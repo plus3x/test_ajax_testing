@@ -11,9 +11,28 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:users)
   end
 
+  test "should get index via ajax" do
+    xhr :get, :index
+    
+    assert_response :success
+    assert_select_jquery :html, "#ajax_field" do
+      assert_select "h1", /Listing users/
+    end
+  end
+
   test "should get new" do
     get :new
     assert_response :success
+  end
+
+  test "should get new user via ajax" do
+    xhr :get, :new
+    
+    assert_response :success
+    assert_select_jquery :html, "#ajax_field" do
+      assert_select "label", count: 3
+      assert_select "input", count: 5
+    end
   end
 
   test "should create user" do
